@@ -82,21 +82,21 @@
                                                 <rect key="frame" x="-2" y="0.0" width="255.5" height="19.5"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <connections>
-                                                    <action selector="changeRedColor" destination="BYZ-38-t0r" eventType="valueChanged" id="LfE-Jg-hgF"/>
+                                                    <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="wUO-1y-gBT"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-IY-8B6">
                                                 <rect key="frame" x="-2" y="46.5" width="255.5" height="19"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <connections>
-                                                    <action selector="changeGreenColor" destination="BYZ-38-t0r" eventType="valueChanged" id="P9b-Ad-bh5"/>
+                                                    <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="vXx-aA-ehk"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H58-OL-Urd">
                                                 <rect key="frame" x="-2" y="92.5" width="255.5" height="19.5"/>
                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                 <connections>
-                                                    <action selector="changeBlueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="B5n-yp-Y0p"/>
+                                                    <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="8if-FM-f7b"/>
                                                 </connections>
                                             </slider>
                                         </subviews>

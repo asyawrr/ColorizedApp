@@ -24,53 +24,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        coloredView.backgroundColor = .white
+        coloredView.layer.cornerRadius = 10
+                
+        coloredView.backgroundColor = UIColor(
+            red: CGFloat(redColorSlider.value),
+            green: CGFloat(greenColorSlider.value),
+            blue: CGFloat(blueColorSlider.value),
+            alpha: 1
+        )
         
-        setupSlider(redColorSlider)
-        setupSlider(greenColorSlider)
-        setupSlider(blueColorSlider)
-        
-        setupLabel(label: redColorLabel, slider: redColorSlider)
-        setupLabel(label: greenColorLabel, slider: greenColorSlider)
-        setupLabel(label: blueColorLabel, slider: blueColorSlider)
-        
+        setupLabel(for: redColorLabel, greenColorLabel, blueColorLabel)
+
     }
     
     // MARK: IB Actions
-    @IBAction func changeRedColor() {
-        changeColor(slider: redColorSlider, label: redColorLabel)
-    }
-    
-    @IBAction func changeGreenColor() {
-        changeColor(slider: greenColorSlider, label: greenColorLabel)
-    }
-    
-    @IBAction func changeBlueColor() {
-        changeColor(slider: blueColorSlider, label: blueColorLabel)
+    @IBAction func changeRGB(_ sender: UISlider) {
+        changeColor()
+        switch sender{
+        case redColorSlider:
+            setupLabel(for: redColorLabel)
+        case greenColorSlider:
+            setupLabel(for: greenColorLabel)
+        default:
+            setupLabel(for: blueColorLabel)
+        }
     }
     
     // MARK: private methods
     
-    private func setupSlider(_ slider: UISlider){
-        slider.value = 1
-        slider.minimumValue = 0
-        slider.maximumValue = 1
+    private func setupLabel(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redColorLabel:
+                label.text = formatToString(from: redColorSlider)
+            case greenColorLabel:
+                label.text = formatToString(from: greenColorSlider)
+            default:
+                label.text = formatToString(from: blueColorSlider)
+            }
+        }
     }
     
-    private func setupLabel(label: UILabel, slider: UISlider) {
-        label.text = String(slider.value)
-    }
-    
-    private func changeColor(slider: UISlider, label: UILabel) {
+    private func changeColor() {
         let red = CGFloat(redColorSlider.value)
         let green = CGFloat(greenColorSlider.value)
         let blue = CGFloat(blueColorSlider.value)
-        
-        label.text = String(round(slider.value * 100) / 100)
         
         let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
         coloredView.backgroundColor = color
     }
     
+    private func formatToString(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
 
