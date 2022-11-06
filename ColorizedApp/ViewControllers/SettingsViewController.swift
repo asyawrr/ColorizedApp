@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController {
         coloredView.layer.cornerRadius = 10
         
         coloredView.backgroundColor = backgroundColor
-        
+        setSliderValue(for: redColorSlider, greenColorSlider, blueColorSlider)
         setupLabel(for: redColorLabel, greenColorLabel, blueColorLabel)
         
     }
@@ -89,7 +89,32 @@ class SettingsViewController: UIViewController {
     private func formatToString(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    
+    private func setSliderValue(for sliders: UISlider...) {
+        sliders.forEach { slider in
+            switch slider {
+            case redColorSlider:
+                slider.value = Float(backgroundColor.rgba.red)
+            case greenColorSlider:
+                slider.value = Float(backgroundColor.rgba.green)
+            default:
+                slider.value = Float(backgroundColor.rgba.blue)
+            }
+        }
+    }
 }
 
 // MARK: extensions
+
+extension UIColor {
+    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+
+        return (red, green, blue, alpha)
+    }
+}
 
