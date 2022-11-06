@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BUJ-mF-8x7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -8,20 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFh-jd-Ai7">
-                                <rect key="frame" x="16" y="98" width="382" height="136"/>
+                                <rect key="frame" x="16" y="106" width="382" height="127"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jGg-LC-KdG">
-                                <rect key="frame" x="16" y="279" width="382" height="111"/>
+                                <rect key="frame" x="16" y="278" width="382" height="111"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Fo9-xA-py6">
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="111"/>
@@ -86,14 +86,14 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-IY-8B6">
-                                                <rect key="frame" x="-2" y="46.5" width="255.5" height="19"/>
+                                                <rect key="frame" x="-2" y="46.5" width="255.5" height="19.5"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="vXx-aA-ehk"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H58-OL-Urd">
-                                                <rect key="frame" x="-2" y="92.5" width="255.5" height="19.5"/>
+                                                <rect key="frame" x="-2" y="93" width="255.5" height="19"/>
                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                 <connections>
                                                     <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="8if-FM-f7b"/>
@@ -116,6 +116,10 @@
                             <constraint firstItem="ZFh-jd-Ai7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="j68-Xz-XFD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="jWM-gA-F2j">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GS3-bb-T4J"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="50x-Oc-7Ly"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="blueColorLabel" destination="sFz-Qm-nv5" id="jYb-zv-HM0"/>
                         <outlet property="blueColorSlider" destination="H58-OL-Urd" id="84L-mJ-C93"/>
@@ -128,10 +132,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93.84615384615384" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1878" y="9"/>
+        </scene>
+        <!--Set Color App-->
+        <scene sceneID="Kzf-66-HJH">
+            <objects>
+                <viewController id="IcI-qI-f53" customClass="MainViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tF2-Gw-rev">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pJo-N8-pK9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set Color App" id="7hq-bt-gMp">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="1Jv-P2-QUd">
+                            <connections>
+                                <segue destination="dVl-1h-2IM" kind="presentation" id="ISy-8s-U9l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHf-jx-ZmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="8.7053571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CQi-X7-fNy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dVl-1h-2IM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tJ4-KQ-Epg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uAm-aB-Lmo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mV-eN-qMo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nda-BP-DW2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUJ-mF-8x7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sCO-6P-kru">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d2d-do-LdN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="IcI-qI-f53" kind="relationship" relationship="rootViewController" id="WC3-So-RvL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHx-S6-U9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704.34782608695662" y="8.7053571428571423"/>
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
