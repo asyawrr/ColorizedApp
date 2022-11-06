@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class SettingsViewController: UIViewController {
     
     // MARK: IB Outlets
@@ -21,20 +22,21 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var coloredView: UIView!
     
+    // MARK: public properties
+    var backgroundColor: UIColor!
+    var delegate: SettingsViewControllerDelegate!
+    
+    // MARK: override functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         coloredView.layer.cornerRadius = 10
-                
-        coloredView.backgroundColor = UIColor(
-            red: CGFloat(redColorSlider.value),
-            green: CGFloat(greenColorSlider.value),
-            blue: CGFloat(blueColorSlider.value),
-            alpha: 1
-        )
+        
+        coloredView.backgroundColor = backgroundColor
         
         setupLabel(for: redColorLabel, greenColorLabel, blueColorLabel)
-
+        
     }
     
     // MARK: IB Actions
@@ -48,6 +50,15 @@ class SettingsViewController: UIViewController {
         default:
             setupLabel(for: blueColorLabel)
         }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem){
+        delegate.setColor(for: backgroundColor)
+        dismiss(animated: true)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
     }
     
     // MARK: private methods
@@ -72,10 +83,13 @@ class SettingsViewController: UIViewController {
         
         let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
         coloredView.backgroundColor = color
+        backgroundColor = color
     }
     
     private func formatToString(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
 }
+
+// MARK: extensions
 

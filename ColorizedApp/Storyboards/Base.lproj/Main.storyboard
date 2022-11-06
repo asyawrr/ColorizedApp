@@ -78,21 +78,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-N3-9OL">
                                         <rect key="frame" x="130.5" y="0.0" width="251.5" height="111"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-dt-ih4">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-dt-ih4">
                                                 <rect key="frame" x="-2" y="0.0" width="255.5" height="19.5"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <connections>
                                                     <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="wUO-1y-gBT"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-IY-8B6">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-IY-8B6">
                                                 <rect key="frame" x="-2" y="46.5" width="255.5" height="19.5"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="changeRGB:" destination="BYZ-38-t0r" eventType="valueChanged" id="vXx-aA-ehk"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H58-OL-Urd">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="H58-OL-Urd">
                                                 <rect key="frame" x="-2" y="93" width="255.5" height="19"/>
                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                 <connections>
@@ -117,8 +117,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jWM-gA-F2j">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GS3-bb-T4J"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="50x-Oc-7Ly"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GS3-bb-T4J">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" id="ae6-OC-9sG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="50x-Oc-7Ly">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="BYZ-38-t0r" id="0g0-H9-lQo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="blueColorLabel" destination="sFz-Qm-nv5" id="jYb-zv-HM0"/>
