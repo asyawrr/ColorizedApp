@@ -172,7 +172,7 @@
                     <items>
                         <barButtonItem systemItem="done" id="bt0-wp-jUk">
                             <connections>
-                                <action selector="doneButtonPressed:" destination="BYZ-38-t0r" id="ZUx-iI-7tk"/>
+                                <action selector="doneButtonPressed:textField:" destination="BYZ-38-t0r" id="yjV-6M-L4h"/>
                             </connections>
                         </barButtonItem>
                     </items>

@@ -80,6 +80,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem){
+        
+        validateValue(for: redTF)
+        validateValue(for: greenTF)
+        validateValue(for: blueTF)
         view.endEditing(true)
         delegate.setColor(for: backgroundColor)
         dismiss(animated: true)
@@ -89,7 +93,11 @@ class SettingsViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem, textField: UITextField) {
+        
+        validateValue(for: redTF)
+        validateValue(for: greenTF)
+        validateValue(for: blueTF)
         view.endEditing(true)
         delegate.setColor(for: backgroundColor)
     }
@@ -162,6 +170,14 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    private func validateValue(for textField: UITextField) {
+        guard Float(textField.text ?? "0") ?? 0 <= 1.0 else {
+            showAlert(with: "Invalid format",
+                      and: "Value of color must be in range from 0 to 1",
+                      for: textField)
+            return }
+    }
+    
     
     
     //    private func setObjectsValue<T>(for stacks: T...){
@@ -220,6 +236,14 @@ extension SettingsViewController: UITextFieldDelegate {
         }
     }
     
-    
+    private func showAlert(with title: String, and message: String, for textField: UITextField? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in return }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
 }
 
