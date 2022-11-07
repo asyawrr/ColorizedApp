@@ -52,19 +52,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-rs-lsb">
                                         <rect key="frame" x="64" y="0.0" width="30" height="107.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-lw-S2X">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-lw-S2X">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aTW-pM-aB6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aTW-pM-aB6">
                                                 <rect key="frame" x="0.0" y="43.5" width="30" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sFz-Qm-nv5">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sFz-Qm-nv5">
                                                 <rect key="frame" x="0.0" y="87" width="30" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -104,20 +104,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xuO-KA-Hep">
                                         <rect key="frame" x="238" y="0.0" width="50" height="107.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.99" borderStyle="roundedRect" placeholder="0" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="u4V-Xu-zHv">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="0" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="u4V-Xu-zHv">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="20.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.99" borderStyle="roundedRect" placeholder="0" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-w5-2R8">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="aTV-w5-2R8">
                                                 <rect key="frame" x="0.0" y="43.5" width="50" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.99" borderStyle="roundedRect" placeholder="0" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="V4L-Dm-Ocp">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="0" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="V4L-Dm-Ocp">
                                                 <rect key="frame" x="0.0" y="87" width="50" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -162,9 +162,21 @@
                         <outlet property="redColorLabel" destination="Wkl-lw-S2X" id="Vot-5I-vDF"/>
                         <outlet property="redColorSlider" destination="eJY-dt-ih4" id="AL4-yC-Di9"/>
                         <outlet property="redTF" destination="u4V-Xu-zHv" id="7Ax-bU-mHM"/>
+                        <outlet property="toolbar" destination="iLv-UL-SJe" id="y7J-O0-3BA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iLv-UL-SJe">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="done" id="bt0-wp-jUk">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="BYZ-38-t0r" id="ZUx-iI-7tk"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="1876.875" y="8.4507042253521121"/>
         </scene>
