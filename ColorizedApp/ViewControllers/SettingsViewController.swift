@@ -20,6 +20,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenColorLabel: UILabel!
     @IBOutlet var redColorLabel: UILabel!
     
+    @IBOutlet var redTF: UITextField!
+    @IBOutlet var greenTF: UITextField!
+    @IBOutlet var blueTF: UITextField!
+    
     @IBOutlet var coloredView: UIView!
     
     // MARK: public properties
@@ -32,10 +36,15 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         coloredView.layer.cornerRadius = 10
-        
+                
         coloredView.backgroundColor = backgroundColor
+        
         setSliderValue(for: redColorSlider, greenColorSlider, blueColorSlider)
         setupLabel(for: redColorLabel, greenColorLabel, blueColorLabel)
+        
+        redTF.delegate = self
+        greenTF.delegate = self
+        blueTF.delegate = self
         
     }
     
@@ -75,6 +84,20 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+//    private func setupTextField(for textFields: UITextField...) {
+//        textFields.forEach { textField in
+//            switch textField {
+//            case redTF:
+//                textField.text = formatToString(from: redColorSlider)
+//            case greenTF:
+//                textField.text = formatToString(from: greenColorSlider)
+//            default:
+//                textField.text = formatToString(from: blueColorSlider)
+//            }
+//        }
+//
+//    }
     
     private func changeColor() {
         let red = CGFloat(redColorSlider.value)
@@ -116,5 +139,27 @@ extension UIColor {
 
         return (red, green, blue, alpha)
     }
+}
+
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let colorValue = Float(textField.text ?? "0") else { return }
+        
+        // TO-DO, FIX BUGS
+        
+        switch textField{
+        case redTF:
+            redColorSlider.value = colorValue
+            redColorLabel.text = colorValue.formatted()
+        case greenTF:
+            greenColorSlider.value = colorValue
+            greenColorLabel.text = colorValue.formatted()
+        default:
+            blueColorSlider.value = colorValue
+            blueColorLabel.text = colorValue.formatted()
+        }
+        
+    }
+    
 }
 
